@@ -1,0 +1,15 @@
+[SECTOREXPORT: MONJARVI//REDCORE]
+
+No es madera.
+Es estructura comprimida.
+
+No es peso.
+Es libertad encapsulada.
+
+No es un mueble.
+Es un nodo portátil que se despliega como un comando.
+
+La mina ya no tiene dueño,
+porque el dueño lleva la mina consigo.
+
+[END OF FILE]
