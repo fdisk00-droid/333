@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAJA ROJA Terminal</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #ff3333;
+            font-family: 'Courier New', Courier, monospace;
+            overflow: hidden;
+        }
+        #terminal {
+            white-space: pre;
+            font-size: 1.2rem;
+            line-height: 1.5rem;
+        }
+        #animation {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="terminal"></div>
+    <script>
+        const terminal = document.getElementById('terminal');
+        const bootSequence = ["Booting CAJA ROJA...", "Loading Modules...", "Initiating Protocols...", "CAJA ROJA Online."];
+        const asciiLogo = `
+         ____  _              _____        _  _             
+        / __ \| |            |  __ \      | |(_)            
+       | |  | | |__   ___  | |__) | __ _| |___ _ __   __ _ 
+       | |  | | '_ \ / _ \ |  _  / / _\` | / __| '_ \ / _\` |
+       | |__| | | | |  __/ | | \ \ (_| | \__ \ | | | (_| |
+        \____/|_| |_|\___| |_|  \_\__,_|_|___/_| |_|
+                                                   __/ |   
+                                                  |___/    
+        `;
+
+        function displayBootSequence() {
+            terminal.innerHTML = "";
+            bootSequence.forEach((msg, index) => {
+                setTimeout(() => {
+                    terminal.innerHTML += msg + "<br>";
+                }, index * 1500);
+            });
+            setTimeout(() => {
+                terminal.innerHTML += asciiLogo + "<br>";
+                simulateDeployment();
+            }, bootSequence.length * 1500);
+        }
+
+        function simulateDeployment() {
+            terminal.innerHTML += "Simulating Deployment...\n";
+            setTimeout(() => {
+                terminal.innerHTML += "Deployment Successful! Ready to use.";
+            }, 3000);
+        }
+
+        window.onload = displayBootSequence;
+    </script>
+</body>
+</html>
